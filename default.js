@@ -45,8 +45,20 @@ let OSX11 = new Option('MacOS 11 - Big Sur', 'MacOS11');
 let OSX12 = new Option('MacOS 12 - Monterey', 'MacOS12');
 let OSX13 = new Option('MacOS 13 - Ventura', 'MacOS13');
 
-let starterEdition = new Option('Starter Edition', 'Starter')
-let homeBasicEdition = new Option('Home Basic Edition', 'HomeBasic')
+let starterEdition = new Option('Starter Edition', 'Starter');
+let homeBasicEdition = new Option('Home Basic Edition', 'HomeBasic');
+let homePremium = new Option('Home Premium Edition', 'HomePrem');
+let professional = new Option('Professional Edition', 'Pro');
+let enterprise = new Option('Enterprise Edition', 'Ent');
+let ultimate = new Option('Ultimate Edition', 'Ult');
+let core = new Option('Core Edition', 'Core');
+let standard = new Option('Standard Edition', 'Std');
+let home = new Option('Home Edition', 'Home');
+let education = new Option('Education Edition', 'Edu');
+let enterpriseLTSC = new Option('Enterprise LTSC Edition', 'EntLTSC');
+let professionalWorkstations = new Option('Professional for Workstations Edition', 'ProWork');
+let professionalEducation = new Option('Professional Education Edition', 'ProEdu');
+
 
 
 let output = document.getElementById("output");
@@ -158,5 +170,36 @@ function changeAvailableEditions() {
     };
     if(OSVersion.value == "Win7") {
         OSEdition.add(starterEdition, undefined);
+        OSEdition.add(homeBasicEdition, undefined);
+        OSEdition.add(homePremium, undefined);
+        OSEdition.add(professional, undefined);
+        OSEdition.add(enterprise, undefined);
+        OSEdition.add(ultimate, undefined);
+    }
+    if(OSVersion.value == "Win8") {
+        OSEdition.add(core, undefined);
+        OSEdition.add(professional, undefined);
+        OSEdition.add(enterprise, undefined);
+    }
+    if(OSVersion.value == "Win8.1") {
+        OSEdition.add(standard, undefined);
+        OSEdition.add(professional, undefined);
+        OSEdition.add(enterprise, undefined);
+    }
+    if(OSVersion.value == "Win10") {
+        OSEdition.add(home, undefined);
+        OSEdition.add(professional, undefined);
+        OSEdition.add(education, undefined);
+        OSEdition.add(enterprise, undefined);
+        OSEdition.add(enterpriseLTSC, undefined);
+        OSEdition.add(professionalWorkstations, undefined);
+    }
+    if(OSVersion.value == "Win11") {
+        OSEdition.add(home, undefined);
+        OSEdition.add(professional, undefined);
+        OSEdition.add(professionalWorkstations, undefined);
+        OSEdition.add(enterprise, undefined);
+        OSEdition.add(education, undefined);
+        OSEdition.add(professionalEducation, undefined);
     }
 }
