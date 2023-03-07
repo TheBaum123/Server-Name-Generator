@@ -1,21 +1,25 @@
+// declaring a variable for every i/o
 let OSType = document.getElementById("OSType");
 let OSVersion = document.getElementById("version");
 let OSEdition = document.getElementById("edition");
 let PV = document.getElementById("PV");
 let ServerIndex = document.getElementById("ServerIndex");
 let showEdition = document.getElementById("showEdition");
+let output = document.getElementById("output");
 
+// declaring some variables that were needed for this to work for some reason last time i checked
 let OSTypeSelection;
 let out;
 
-let noSel = new Option('-- select an option --', '');
-
+// declaring selection options for OS versions
+    // Windows versions
 let windows7 = new Option('Windows 7', 'Win7');
 let windows8 = new Option('Windows 8', 'Win8');
 let windows81 = new Option('Windows 8.1', 'Win8.1');
 let windows10 = new Option('Windows 10', 'Win10');
 let windows11 = new Option('Windows 11', 'Win11');
 
+    // Windows server versions
 let windowsServer2003 = new Option('Windows Server 2003', 'WinServ2003');
 let windowsServerHome2007 = new Option('Windows Server Home 2007', 'WinServ2007');
 let windowsServer2008 = new Option('Windows Server 2008', 'WinServ2008');
@@ -24,6 +28,7 @@ let windowsServer2012 = new Option('Windows Server 2012', 'WinServ2012');
 let windowsServer2016 = new Option('Windows Server 2016', 'WinServ2016');
 let windowsServer2022 = new Option('Windows Server 2022', 'WinServ2022');
 
+    // OSX versions
 let OSXBeta = new Option('MacOS Public Beta - Kodiak', 'MacOSBeta');
 let OSX100 = new Option('MacOS 10.0 - Cheetah', 'Macos10.0');
 let OSX101 = new Option('MacOS 10.1 - Puma', 'MacOS10.1');
@@ -45,6 +50,7 @@ let OSX11 = new Option('MacOS 11 - Big Sur', 'MacOS11');
 let OSX12 = new Option('MacOS 12 - Monterey', 'MacOS12');
 let OSX13 = new Option('MacOS 13 - Ventura', 'MacOS13');
 
+// declaring selection options for Windows standard editions
 let starterEdition = new Option('Starter Edition', 'Starter');
 let homeBasicEdition = new Option('Home Basic Edition', 'HomeBasic');
 let homePremium = new Option('Home Premium Edition', 'HomePrem');
@@ -59,24 +65,19 @@ let enterpriseLTSC = new Option('Enterprise LTSC Edition', 'EntLTSC');
 let professionalWorkstations = new Option('Professional for Workstations Edition', 'ProWork');
 let professionalEducation = new Option('Professional Education Edition', 'ProEdu');
 
-
-
-let output = document.getElementById("output");
+// TODO: declare selection options for Windows server editions
 
 
 
+// hide elements that have to be hidden on page load
 function init() {
     OSVersion.hidden = true;
     OSEdition.hidden = true;
+    showEdition.hidden = true;
 };
 
 
-function showInputs(OSTypeSelection) {
-    if(OSTypeSelection != "") {
-        OSVersion.hidden = false;
-    };
-};
-
+// refresh the output with selected elements in name
 function refreshOutput() {
     if(OSEdition.value != "" && showEdition.checked) {
         let out = OSVersion.value + '-' + OSEdition.value + '-' + PV.value + '-' + ServerIndex.value;
@@ -87,49 +88,73 @@ function refreshOutput() {
     }
 };
 
+
+// add event listeners to inputs to refresh the ouput on change
+// OS type to know which versions to show
 OSType.addEventListener("change", function() {
     let OSTypeSelection = OSType.value;
+    // deselect OS version
     OSVersion.value = "";
-    showInputs(OSTypeSelection);
+    // show OS version input if OS type is selected
+    if(OSTypeSelection != "") {
+        OSVersion.hidden = false;
+    };
+    // call function to change the selection of versions to the ones available for the currently selected OS
     changeAvailableVersions(OSTypeSelection);
 });
 
+// OS version to know which operating system speciffically is used
 OSVersion.addEventListener("change", function() {
+    // show the checkbox to include the edition in the name and the input to chose the edition if the OS version starts with Win
     if(OSVersion.value.startsWith("Win") && showEdition.checked) {
+        showEdition.hidden = false;
         OSEdition.hidden = false;
         changeAvailableEditions();
-    } else {
+    } 
+    // else hide the input and the checkbox
+    else {
         OSEdition.hidden = true;
+        showEdition.hidden = true;
     }
     refreshOutput();
 });
 
+// OS Edition listener currently only to refresh the output
 OSEdition.addEventListener("change", function() {
     refreshOutput();
 });
 
+// physical container or vm listener currently only to refresh the output
 PV.addEventListener("change", function() {
     refreshOutput();
 });
 
+// Server index listener currently only to refresh the output
 ServerIndex.addEventListener("change", function() {
     refreshOutput();
 });
 
+// show edition to show the edition when the checkbox is checked
 showEdition.addEventListener("change", function() {
+    // check if the OS Edition should take an input and call the function to set the options for the editions
     if(OSVersion.value.startsWith("Win") && showEdition.checked) {
         OSEdition.hidden = false;
         changeAvailableEditions();
-    } else {
+    }
+    // if the os edition should not be shown, hide the selection input for it
+    else {
         OSEdition.hidden = true;
     }
     refreshOutput();
 });
 
+// function change the OS version selection to the correct ones
 function changeAvailableVersions(OSTypeSelection) {
+    // clear all version selection options
     for(let i = OSVersion.length - 1; i > 0; i--) {
         OSVersion.remove(1);
     };
+    // add the options for windows if windows is selected as the OS type
     if(OSTypeSelection == "Win") {
         OSVersion.add(windows7, undefined);
         OSVersion.add(windows8, undefined);
@@ -137,6 +162,7 @@ function changeAvailableVersions(OSTypeSelection) {
         OSVersion.add(windows10, undefined);
         OSVersion.add(windows11, undefined);
     };
+    // add the options for windows server if windows server is selected as the OS type
     if(OSTypeSelection == "WinServ") {
         OSVersion.add(windowsServer2003, undefined);
         OSVersion.add(windowsServerHome2007, undefined);
@@ -146,6 +172,7 @@ function changeAvailableVersions(OSTypeSelection) {
         OSVersion.add(windowsServer2016, undefined);
         OSVersion.add(windowsServer2022, undefined);
     };
+    // add the options for OSX if OSX is selected as the OS type
     if(OSTypeSelection == "OSX") {
         OSVersion.add(OSXBeta, undefined);
         OSVersion.add(OSX100, undefined);
@@ -170,10 +197,13 @@ function changeAvailableVersions(OSTypeSelection) {
     };
 };
 
+// function to change the OS editions selection to the correct ones when windows is selected
 function changeAvailableEditions() {
+    // clear all edition selection options
     for(let i = OSEdition.length - 1; i > 0; i--) {
         OSEdition.remove(1);
     };
+    // add the editions for windows 7 as options if it is the selected version
     if(OSVersion.value == "Win7") {
         OSEdition.add(starterEdition, undefined);
         OSEdition.add(homeBasicEdition, undefined);
@@ -181,17 +211,20 @@ function changeAvailableEditions() {
         OSEdition.add(professional, undefined);
         OSEdition.add(enterprise, undefined);
         OSEdition.add(ultimate, undefined);
-    }
+    };
+    // add the editions for windows 8 as options if it is the selected version
     if(OSVersion.value == "Win8") {
         OSEdition.add(core, undefined);
         OSEdition.add(professional, undefined);
         OSEdition.add(enterprise, undefined);
-    }
+    };
+    // add the editions for windows 8.1 as options if it is the selected version
     if(OSVersion.value == "Win8.1") {
         OSEdition.add(standard, undefined);
         OSEdition.add(professional, undefined);
         OSEdition.add(enterprise, undefined);
-    }
+    };
+    // add the editions for windows 10 as options if it is the selected version
     if(OSVersion.value == "Win10") {
         OSEdition.add(home, undefined);
         OSEdition.add(professional, undefined);
@@ -199,7 +232,8 @@ function changeAvailableEditions() {
         OSEdition.add(enterprise, undefined);
         OSEdition.add(enterpriseLTSC, undefined);
         OSEdition.add(professionalWorkstations, undefined);
-    }
+    };
+    // add the editions for windows 11 as options if it is the selected version
     if(OSVersion.value == "Win11") {
         OSEdition.add(home, undefined);
         OSEdition.add(professional, undefined);
@@ -207,5 +241,5 @@ function changeAvailableEditions() {
         OSEdition.add(enterprise, undefined);
         OSEdition.add(education, undefined);
         OSEdition.add(professionalEducation, undefined);
-    }
-}
+    };
+};
