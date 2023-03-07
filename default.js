@@ -51,6 +51,7 @@ let output = document.getElementById("output");
 
 function init() {
     OSVersion.hidden = true;
+    OSEdition.hidden = true;
 };
 
 
@@ -74,6 +75,21 @@ OSType.addEventListener("change", function() {
     let OSTypeSelection = OSType.value;
     showInputs(OSTypeSelection);
     changeAvailableVersions(OSTypeSelection);
+});
+
+OSVersion.addEventListener("change", function() {
+    if(OSVersion.value != "") {
+        OSEdition.hidden = false;
+    };
+    refreshOutput();
+});
+
+OSEdition.addEventListener("change", function() {
+    refreshOutput();
+});
+
+PV.addEventListener("change", function() {
+    refreshOutput();
 });
 
 function changeAvailableVersions(OSTypeSelection) {
