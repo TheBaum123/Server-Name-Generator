@@ -95,7 +95,7 @@ OSType.addEventListener("change", function() {
 });
 
 OSVersion.addEventListener("change", function() {
-    if(OSVersion.value.startsWith("Win")) {
+    if(OSVersion.value.startsWith("Win") && showEdition.checked) {
         OSEdition.hidden = false;
         changeAvailableEditions();
     } else {
@@ -117,6 +117,12 @@ ServerIndex.addEventListener("change", function() {
 });
 
 showEdition.addEventListener("change", function() {
+    if(OSVersion.value.startsWith("Win") && showEdition.checked) {
+        OSEdition.hidden = false;
+        changeAvailableEditions();
+    } else {
+        OSEdition.hidden = true;
+    }
     refreshOutput();
 });
 
