@@ -3,6 +3,7 @@ let OSVersion = document.getElementById("version");
 let OSEdition = document.getElementById("edition");
 let PV = document.getElementById("PV");
 let ServerIndex = document.getElementById("ServerIndex");
+let showEdition = document.getElementById("showEdition");
 
 let OSTypeSelection;
 let out;
@@ -44,6 +45,9 @@ let OSX11 = new Option('MacOS 11 - Big Sur', 'MacOS11');
 let OSX12 = new Option('MacOS 12 - Monterey', 'MacOS12');
 let OSX13 = new Option('MacOS 13 - Ventura', 'MacOS13');
 
+let starterEdition = new Option('Starter Edition', 'Starter')
+let homeBasicEdition = new Option('Home Basic Edition', 'HomeBasic')
+
 
 let output = document.getElementById("output");
 
@@ -62,25 +66,29 @@ function showInputs(OSTypeSelection) {
 };
 
 function refreshOutput() {
-    if(OSEdition.value == "") {
-        let out = OSVersion.value + '-' + PV.value + '-' + ServerIndex.value;
+    if(OSEdition.value != "" && showEdition.checked) {
+        let out = OSVersion.value + '-' + OSEdition.value + '-' + PV.value + '-' + ServerIndex.value;
         output.innerHTML = out;
     } else {
-        let out = OSVersion.value + '-' + OSEdition.value + '-' + PV.value + '-' + ServerIndex.value;
+        let out = OSVersion.value + '-' + PV.value + '-' + ServerIndex.value;
         output.innerHTML = out;
     }
 };
 
 OSType.addEventListener("change", function() {
     let OSTypeSelection = OSType.value;
+    OSVersion.value = "";
     showInputs(OSTypeSelection);
     changeAvailableVersions(OSTypeSelection);
 });
 
 OSVersion.addEventListener("change", function() {
-    if(OSVersion.value != "") {
+    if(OSVersion.value.startsWith("Win")) {
         OSEdition.hidden = false;
-    };
+        changeAvailableEditions();
+    } else {
+        OSEdition.hidden = true;
+    }
     refreshOutput();
 });
 
@@ -96,12 +104,15 @@ ServerIndex.addEventListener("change", function() {
     refreshOutput();
 });
 
+showEdition.addEventListener("change", function() {
+    refreshOutput();
+});
+
 function changeAvailableVersions(OSTypeSelection) {
-    for(let i = OSVersion.length; i > 0; i--) {
-        OSVersion.remove(0);
+    for(let i = OSVersion.length - 1; i > 0; i--) {
+        OSVersion.remove(1);
     };
     if(OSTypeSelection == "Win") {
-        OSVersion.add(noSel, undefined);
         OSVersion.add(windows7, undefined);
         OSVersion.add(windows8, undefined);
         OSVersion.add(windows81, undefined);
@@ -109,7 +120,6 @@ function changeAvailableVersions(OSTypeSelection) {
         OSVersion.add(windows11, undefined);
     };
     if(OSTypeSelection == "WinServ") {
-        OSVersion.add(noSel, undefined);
         OSVersion.add(windowsServer2003, undefined);
         OSVersion.add(windowsServerHome2007, undefined);
         OSVersion.add(windowsServer2008, undefined);
@@ -119,7 +129,6 @@ function changeAvailableVersions(OSTypeSelection) {
         OSVersion.add(windowsServer2022, undefined);
     };
     if(OSTypeSelection == "OSX") {
-        OSVersion.add(noSel, undefined);
         OSVersion.add(OSXBeta, undefined);
         OSVersion.add(OSX100, undefined);
         OSVersion.add(OSX101, undefined);
@@ -143,6 +152,11 @@ function changeAvailableVersions(OSTypeSelection) {
     };
 };
 
-OSVersion.addEventListener("change", function() {
-    refreshOutput();
-});
+function changeAvailableEditions() {
+    for(let i = OSEdition.length - 1; i > 0; i--) {
+        OSEdition.remove(1);
+    };
+    if(OSVersion.value == "Win7") {
+        OSEdition.add(starterEdition, undefined);
+    }
+}
