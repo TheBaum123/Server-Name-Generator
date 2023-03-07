@@ -92,6 +92,10 @@ PV.addEventListener("change", function() {
     refreshOutput();
 });
 
+ServerIndex.addEventListener("change", function() {
+    refreshOutput();
+});
+
 function changeAvailableVersions(OSTypeSelection) {
     for(let i = OSVersion.length; i > 0; i--) {
         OSVersion.remove(0);
