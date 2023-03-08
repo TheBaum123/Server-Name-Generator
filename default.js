@@ -66,7 +66,16 @@ let enterpriseLTSC = new Option('Enterprise LTSC Edition', 'EntLTSC');
 let professionalWorkstations = new Option('Professional for Workstations Edition', 'ProWork');
 let professionalEducation = new Option('Professional Education Edition', 'ProEdu');
 
-// TODO: declare selection options for Windows server editions
+// declaring selection options for windows server editions
+let webEdition = new Option('Web Edition', 'Web');
+let datacenter = new Option('Datacenter Edition', 'DC');
+let storageServer = new Option('Storage Server Edition', 'Sto');
+let applianceEdition = new Option('Appliance Edition', 'Apls');
+let itanium = new Option('Itanium Edition', 'Itanium');
+let foundation = new Option('Foundation Edition', 'Fdn');
+let hpcEdition = new Option('HPC Edition', 'HPC');
+let essential = new Option('Essential Edition', 'Esntl');
+let azureDatacenter = new Option('Azure Datacenter edition', 'AzureDC');
 
 
 
@@ -260,4 +269,12 @@ function changeAvailableEditions() {
         OSEdition.add(education, undefined);
         OSEdition.add(professionalEducation, undefined);
     };
+    if (OSVersion.value == "WinServ2003") {
+        OSEdition.add(webEdition, undefined);
+        OSEdition.add(standard, undefined);
+        OSEdition.add(enterprise, undefined);
+        OSEdition.add(datacenter, undefined);
+        OSEdition.add(storageServer, undefined);
+        OSEdition.add(applianceEdition, undefined);
+    }
 };
