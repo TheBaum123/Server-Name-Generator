@@ -119,7 +119,7 @@ OSVersion.addEventListener("change", function() {
         OSVersionCustom.hidden = true;
     }
     // show the checkbox to include the edition in the name and the input to chose the edition if the OS version starts with Win
-    if(OSVersion.value.startsWith("Win") && showEdition.checked) {
+    if(OSVersion.value.startsWith("Win")) {
         showEdition.hidden = false;
         OSEdition.hidden = false;
         changeAvailableEditions();
