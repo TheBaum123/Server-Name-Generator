@@ -1,6 +1,7 @@
 // declaring a variable for every i/o
 let OSType = document.getElementById("OSType");
 let OSVersion = document.getElementById("version");
+let OSVersionCustom = document.getElementById("customVersion")
 let OSEdition = document.getElementById("edition");
 let PV = document.getElementById("PV");
 let ServerIndex = document.getElementById("ServerIndex");
@@ -72,6 +73,7 @@ let professionalEducation = new Option('Professional Education Edition', 'ProEdu
 // hide elements that have to be hidden on page load
 function init() {
     OSVersion.hidden = true;
+    OSVersionCustom.hidden = true;
     OSEdition.hidden = true;
     showEdition.hidden = true;
 };
@@ -79,12 +81,17 @@ function init() {
 
 // refresh the output with selected elements in name
 function refreshOutput() {
-    if(OSEdition.value != "" && showEdition.checked) {
-        let out = OSVersion.value + '-' + OSEdition.value + '-' + PV.value + '-' + ServerIndex.value;
+    if(OSVersion.value == 'custom') {
+        let out = OSVersionCustom.value + '-' + PV.value + '-' + ServerIndex.value;
         output.innerHTML = out;
     } else {
-        let out = OSVersion.value + '-' + PV.value + '-' + ServerIndex.value;
-        output.innerHTML = out;
+        if(OSEdition.value != "" && showEdition.checked) {
+            let out = OSVersion.value + '-' + OSEdition.value + '-' + PV.value + '-' + ServerIndex.value;
+            output.innerHTML = out;
+        } else {
+            let out = OSVersion.value + '-' + PV.value + '-' + ServerIndex.value;
+            output.innerHTML = out;
+        }
     }
 };
 
@@ -105,14 +112,20 @@ OSType.addEventListener("change", function() {
 
 // OS version to know which operating system speciffically is used
 OSVersion.addEventListener("change", function() {
+    // show and hide the custom version input
+    if(OSVersion.value == "custom") {
+        OSVersionCustom.hidden = false;
+    } else {
+        OSVersionCustom.hidden = true;
+    }
     // show the checkbox to include the edition in the name and the input to chose the edition if the OS version starts with Win
     if(OSVersion.value.startsWith("Win") && showEdition.checked) {
         showEdition.hidden = false;
         OSEdition.hidden = false;
         changeAvailableEditions();
     } 
-    // else hide the input and the checkbox
     else {
+        // else hide the input and the checkbox
         OSEdition.hidden = true;
         showEdition.hidden = true;
     }
@@ -148,11 +161,16 @@ showEdition.addEventListener("change", function() {
     refreshOutput();
 });
 
+// refresh on custom version
+OSVersionCustom.addEventListener("change", function() {
+    refreshOutput();
+});
+
 // function change the OS version selection to the correct ones
 function changeAvailableVersions(OSTypeSelection) {
     // clear all version selection options
-    for(let i = OSVersion.length - 1; i > 0; i--) {
-        OSVersion.remove(1);
+    for(let i = OSVersion.length - 2; i > 0; i--) {
+        OSVersion.remove(2);
     };
     // add the options for windows if windows is selected as the OS type
     if(OSTypeSelection == "Win") {
