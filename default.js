@@ -94,14 +94,14 @@ function refreshOutput() {
         let out = OSVersionCustom.value + '-' + PV.value + '-' + ServerIndex.value;
         output.innerHTML = out;
     } else {
-        if(OSEdition.value != "" && showEdition.checked) {
+        if(OSEdition.value != "" && showEdition.checked && OSVersion.value.startsWith("Win")) {
             let out = OSVersion.value + '-' + OSEdition.value + '-' + PV.value + '-' + ServerIndex.value;
             output.innerHTML = out;
         } else {
             let out = OSVersion.value + '-' + PV.value + '-' + ServerIndex.value;
             output.innerHTML = out;
-        }
-    }
+        };
+    };
 };
 
 
@@ -126,18 +126,17 @@ OSVersion.addEventListener("change", function() {
         OSVersionCustom.hidden = false;
     } else {
         OSVersionCustom.hidden = true;
-    }
+    };
     // show the checkbox to include the edition in the name and the input to chose the edition if the OS version starts with Win and isn't Windows Server 2007 or 2011
     if(OSVersion.value.startsWith("Win") && OSVersion.value != "WinServ2007" && OSVersion.value != "WinServ2011") {
         showEdition.hidden = false;
         OSEdition.hidden = false;
         changeAvailableEditions();
-    } 
-    else {
+    } else {
         // else hide the input and the checkbox
         OSEdition.hidden = true;
         showEdition.hidden = true;
-    }
+    };
     refreshOutput();
 });
 
