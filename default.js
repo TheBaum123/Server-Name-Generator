@@ -127,8 +127,8 @@ OSVersion.addEventListener("change", function() {
     } else {
         OSVersionCustom.hidden = true;
     }
-    // show the checkbox to include the edition in the name and the input to chose the edition if the OS version starts with Win
-    if(OSVersion.value.startsWith("Win")) {
+    // show the checkbox to include the edition in the name and the input to chose the edition if the OS version starts with Win and isn't Windows Server 2007 or 2011
+    if(OSVersion.value.startsWith("Win") && OSVersion.value != "WinServ2007" && OSVersion.value != "WinServ2011") {
         showEdition.hidden = false;
         OSEdition.hidden = false;
         changeAvailableEditions();
@@ -269,12 +269,36 @@ function changeAvailableEditions() {
         OSEdition.add(education, undefined);
         OSEdition.add(professionalEducation, undefined);
     };
-    if (OSVersion.value == "WinServ2003") {
+    if(OSVersion.value == "WinServ2003") {
         OSEdition.add(webEdition, undefined);
         OSEdition.add(standard, undefined);
         OSEdition.add(enterprise, undefined);
         OSEdition.add(datacenter, undefined);
         OSEdition.add(storageServer, undefined);
         OSEdition.add(applianceEdition, undefined);
-    }
+    };
+    if(OSVersion.value == "WinServ2008") {
+        OSEdition.add(webEdition, undefined);
+        OSEdition.add(standard, undefined);
+        OSEdition.add(enterprise, undefined);
+        OSEdition.add(datacenter, undefined);
+        OSEdition.add(itanium, undefined);
+        OSEdition.add(foundation, undefined);
+        OSEdition.add(hpcEdition, undefined);
+    };
+    if(OSVersion.value == "WinServ2012") {
+        OSEdition.add(webEdition, undefined);
+        OSEdition.add(standard, undefined);
+        OSEdition.add(enterprise, undefined);
+        OSEdition.add(datacenter, undefined);
+    };
+    if(OSVersion.value == "WinServ2016") {
+        OSEdition.add(standard, undefined);
+        OSEdition.add(datacenter, undefined);
+    };
+    if(OSVersion.value == "WinServ2022") {
+        OSEdition.add(standard, undefined);
+        OSEdition.add(datacenter, undefined);
+        OSEdition.add(azureDatacenter, undefined);
+    };
 };
