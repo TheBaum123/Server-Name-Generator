@@ -51,6 +51,25 @@ let OSX11 = new Option('MacOS 11 - Big Sur', 'MacOS11');
 let OSX12 = new Option('MacOS 12 - Monterey', 'MacOS12');
 let OSX13 = new Option('MacOS 13 - Ventura', 'MacOS13');
 
+let freeBSD = new Option('FreeBSD', 'FreeBSD');
+let openBSD = new Option('OpenBSD', 'OpenBSD');
+let netBSD = new Option('NetBSD', 'NetBSD');
+let dragonFlyBSD = new Option('dragon fly BSD', 'dragonFly');
+
+let v1x = new Option('version 1.x', '1');
+let v2x = new Option('version 2.x', '2');
+let v3x = new Option('version 3.x', '3');
+let v4x = new Option('version 4.x', '4');
+let v5x = new Option('version 5.x', '5');
+let v6x = new Option('version 6.x', '6');
+let v7x = new Option('version 7.x', '7');
+let v8x = new Option('version 8.x', '8');
+let v9x = new Option('version 9.x', '9');
+let v10x = new Option('version 10.x', '10');
+let v11x = new Option('version 11.x', '11');
+let v12x = new Option('version 12.x', '12');
+let v13x = new Option('version 13.x', '13');
+
 // declaring selection options for Windows standard editions
 let starterEdition = new Option('Starter Edition', 'Starter');
 let homeBasicEdition = new Option('Home Basic Edition', 'HomeBasic');
@@ -94,7 +113,7 @@ function refreshOutput() {
         let out = OSVersionCustom.value + '-' + PV.value + '-' + ServerIndex.value;
         output.innerHTML = out;
     } else {
-        if(OSEdition.value != "" && showEdition.checked && OSVersion.value.startsWith("Win")) {
+        if(OSEdition.value != "" && showEdition.checked) {
             let out = OSVersion.value + '-' + OSEdition.value + '-' + PV.value + '-' + ServerIndex.value;
             output.innerHTML = out;
         } else {
@@ -133,9 +152,16 @@ OSVersion.addEventListener("change", function() {
         OSEdition.hidden = false;
         changeAvailableEditions();
     } else {
+        if(OSVersion.value == "OpenBSD" || OSVersion.value == "FreeBSD" || OSVersion.value == "NetBSD" || OSVersion.value == "dragonFly") {
+            showEdition.hidden = false;
+            OSEdition.hidden = false;
+            changeAvailableEditions();
+        } else {
         // else hide the input and the checkbox
         OSEdition.hidden = true;
         showEdition.hidden = true;
+        showEdition.checked = false;
+        };
     };
     refreshOutput();
 });
@@ -221,6 +247,13 @@ function changeAvailableVersions(OSTypeSelection) {
         OSVersion.add(OSX12, undefined);
         OSVersion.add(OSX13, undefined);
     };
+    // add the options for BSD if BSD is selected as the OS type
+    if(OSTypeSelection == "BSD") {
+        OSVersion.add(freeBSD, undefined);
+        OSVersion.add(openBSD, undefined);
+        OSVersion.add(netBSD, undefined);
+        OSVersion.add(dragonFlyBSD, undefined);
+    }
 };
 
 // function to change the OS editions selection to the correct ones when windows is selected
@@ -299,5 +332,48 @@ function changeAvailableEditions() {
         OSEdition.add(standard, undefined);
         OSEdition.add(datacenter, undefined);
         OSEdition.add(azureDatacenter, undefined);
+    };
+    if(OSVersion.value == "FreeBSD") {
+        OSEdition.add(v1x, undefined);
+        OSEdition.add(v2x, undefined);
+        OSEdition.add(v3x, undefined);
+        OSEdition.add(v4x, undefined);
+        OSEdition.add(v5x, undefined);
+        OSEdition.add(v6x, undefined);
+        OSEdition.add(v7x, undefined);
+        OSEdition.add(v8x, undefined);
+        OSEdition.add(v9x, undefined);
+        OSEdition.add(v10x, undefined);
+        OSEdition.add(v11x, undefined);
+        OSEdition.add(v12x, undefined);
+        OSEdition.add(v13x, undefined);
+    };
+    if(OSVersion.value == "OpenBSD") {
+        OSEdition.add(v1x, undefined);
+        OSEdition.add(v2x, undefined);
+        OSEdition.add(v3x, undefined);
+        OSEdition.add(v4x, undefined);
+        OSEdition.add(v5x, undefined);
+        OSEdition.add(v6x, undefined);
+        OSEdition.add(v7x, undefined);
+    };
+    if(OSVersion.value == "NetBSD") {
+        OSEdition.add(v1x, undefined);
+        OSEdition.add(v2x, undefined);
+        OSEdition.add(v3x, undefined);
+        OSEdition.add(v4x, undefined);
+        OSEdition.add(v5x, undefined);
+        OSEdition.add(v6x, undefined);
+        OSEdition.add(v7x, undefined);
+        OSEdition.add(v8x, undefined);
+        OSEdition.add(v9x, undefined);
+    };
+    if(OSVersion.value == "dragonFly") {
+        OSEdition.add(v1x, undefined);
+        OSEdition.add(v2x, undefined);
+        OSEdition.add(v3x, undefined);
+        OSEdition.add(v4x, undefined);
+        OSEdition.add(v5x, undefined);
+        OSEdition.add(v6x, undefined);
     };
 };
