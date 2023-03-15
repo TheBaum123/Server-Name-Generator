@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body onload="init()">
+<div id="grid-container">
     <select id="OSType">
         <option selected disabled value=""> -- select an option -- </option>
         <option value="Win">Windows Default</option>
@@ -36,7 +38,17 @@
     <input type="number" id="ServerIndex">
     <input type="checkbox" id="showEdition" checked="true">
 
-    <label id="output">Select Values to start</label>
+    <div id="out-container">
+        <label id="output">Select Values to start</label>
+    </div>
+
+    <label id="typeLabel">Which type of OS are you using</label>
+    <label id="versionLabel">Which version of it?</label>
+    <label id="editionLabel">Which Edition?</label>
+    <label id="pvLabel">VM, Bare Metal or Container?</label>
+    <label id="showEditionLabel">Show the edition in the output?</label>
+    <label id="indexLabel">Count of Machines like this?</label>
+</div>
 
     <script src="default.js"></script>
 </body>

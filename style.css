@@ -1,0 +1,38 @@
+#grid-container {
+    display: grid;
+    background-color: #404040A0;
+    grid-template-areas: 
+    'type-label type-label version-label version-label show-edition-label edition-label index-label pv-label'
+    'type type version version show-edition edition index pv'
+    'footer1 footer1 footer1 out out footer2 footer2 footer2';
+    gap: 15px;
+    border: grey 0.5vh solid;
+    border-radius: 15px;
+    margin: 0.5vh;
+}
+
+#grid-container>* {
+    background-color: #FFFFFFA0;
+    border-radius: 10px;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+}
+
+#OSType { grid-area: type;}
+#version { grid-area: version;}
+#customVersion { grid-area: version;}
+#edition { grid-area: edition;}
+#PV { grid-area: pv;}
+#ServerIndex { grid-area: index;}
+#showEdition { grid-area: show-edition;}
+#out-container {
+    grid-area: out;
+    text-align: center;
+}
+#typeLabel { grid-area: type-label;}
+#versionLabel { grid-area: version-label;}
+#editionLabel { grid-area: edition-label;}
+#pvLabel { grid-area: pv-label;}
+#indexLabel { grid-area: index-label;}
+#editionLabel { grid-area: edition-label;}
+#showEditionLabel { grid-area: show-edition-label;}

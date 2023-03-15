@@ -7,6 +7,9 @@ let PV = document.getElementById("PV");
 let ServerIndex = document.getElementById("ServerIndex");
 let showEdition = document.getElementById("showEdition");
 let output = document.getElementById("output");
+let VersionLabel = document.getElementById("versionLabel");
+let ShowEditionLabel = document.getElementById("showEditionLabel");
+let EditionLabel = document.getElementById("editionLabel");
 
 // declaring some variables that were needed for this to work for some reason last time i checked
 let OSTypeSelection;
@@ -104,6 +107,9 @@ function init() {
     OSVersionCustom.hidden = true;
     OSEdition.hidden = true;
     showEdition.hidden = true;
+    EditionLabel.hidden = true;
+    VersionLabel.hidden = true;
+    ShowEditionLabel.hidden = true;
 };
 
 
@@ -133,6 +139,7 @@ OSType.addEventListener("change", function() {
     // show OS version input if OS type is selected
     if(OSTypeSelection != "") {
         OSVersion.hidden = false;
+        VersionLabel.hidden = false;
     };
     // call function to change the selection of versions to the ones available for the currently selected OS
     changeAvailableVersions(OSTypeSelection);
@@ -150,6 +157,8 @@ OSVersion.addEventListener("change", function() {
     if(OSVersion.value.startsWith("Win") && OSVersion.value != "WinServ2007" && OSVersion.value != "WinServ2011") {
         showEdition.hidden = false;
         OSEdition.hidden = false;
+        EditionLabel.hidden = false;
+        ShowEditionLabel.hidden = false;
         changeAvailableEditions();
     } else {
         if(OSVersion.value == "OpenBSD" || OSVersion.value == "FreeBSD" || OSVersion.value == "NetBSD" || OSVersion.value == "dragonFly") {
@@ -161,6 +170,8 @@ OSVersion.addEventListener("change", function() {
         OSEdition.hidden = true;
         showEdition.hidden = true;
         showEdition.checked = false;
+        EditionLabel.hidden = true;
+        ShowEditionLabel.hidden = true;
         };
     };
     refreshOutput();
@@ -186,11 +197,13 @@ showEdition.addEventListener("change", function() {
     // check if the OS Edition should take an input and call the function to set the options for the editions
     if(OSVersion.value.startsWith("Win") && showEdition.checked) {
         OSEdition.hidden = false;
+        EditionLabel.hidden = false;
         changeAvailableEditions();
     }
     // if the os edition should not be shown, hide the selection input for it
     else {
         OSEdition.hidden = true;
+        EditionLabel.hidden = true;
     }
     refreshOutput();
 });
