@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="init()">
+<div id="grid-container">
+    <select id="OSType">
+        <option selected disabled value=""> -- select an option -- </option>
+        <option value="Win">Windows Default</option>
+        <option value="WinServ">Windows Server</option>
+        <option value="OSX">MacOS</option>
+        <option value="Linux">Linux</option>
+        <option value="BSD">BSD</option>
+        <option value="Hypervisor">Hypervisor</option>
+    </select>
+
+    <select id="version">
+        <option selected disabled value=""> -- select an option -- </option>
+        <option value="custom">other</option>
+    </select>
+
+    <input id="customVersion" type="text">
+
+    <select id="edition">
+        <option selected disabled value=""> -- select an option -- </option>
+    </select>
+
+    <select id="PV">
+        <option selected disabled value=""> -- select an option -- </option>
+        <option value="P">Physical</option>
+        <option value="V">Virtual Machine</option>
+        <option value="C">Container</option>
+    </select>
+
+    <input type="number" id="ServerIndex">
+    <input type="checkbox" id="showEdition" checked="true">
+
+    <div id="out-container">
+        <label id="output">Select Values to start</label>
+    </div>
+
+    <label id="typeLabel">Which type of OS are you using</label>
+    <label id="versionLabel">Which version of it?</label>
+    <label id="editionLabel">Which Edition?</label>
+    <label id="pvLabel">VM, Bare Metal or Container?</label>
+    <label id="showEditionLabel">Show the edition in the output?</label>
+    <label id="indexLabel">Count of Machines like this?</label>
+</div>
+
+    <script src="default.js"></script>
+</body>
+</html>
