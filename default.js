@@ -150,6 +150,7 @@ OSVersion.addEventListener("change", function() {
     // show and hide the custom version input
     if(OSVersion.value == "custom") {
         OSVersionCustom.hidden = false;
+        OSVersion.hidden = true;
     } else {
         OSVersionCustom.hidden = true;
     };
