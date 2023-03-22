@@ -12,7 +12,7 @@
     grid-template-areas: 
     'type-label type-label version-label version-label show-edition-label edition-label index-label pv-label'
     'type type version version show-edition edition index pv'
-    'footer1 footer1 footer1 out out footer2 footer2 footer2';
+    'footer1 footer1 footer1 out reset footer2 footer2 footer2';
     gap: 15px;
     border: var(--secondary-bg-color) 0.5vh solid;
     border-radius: 15px;
@@ -41,6 +41,8 @@ select {
 #out-container {
     grid-area: out;
     text-align: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 #typeLabel { grid-area: type-label;}
 #versionLabel { grid-area: version-label;}
@@ -49,3 +51,4 @@ select {
 #indexLabel { grid-area: index-label;}
 #editionLabel { grid-area: edition-label;}
 #showEditionLabel { grid-area: show-edition-label;}
+#reset-button { grid-area: reset;}
