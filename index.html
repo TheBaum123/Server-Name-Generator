@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheBaum's Server Name Generator</title>
+</head>
+<body>
+    <form id="input-form">
+        <select name="purpose" id="purpose-selector">
+            <option value="[purpose]" default disabled>--Please Select Server Purpose--</option>
+        </select>
+        <span>-</span>
+        <select name="env" id="env-selector">
+            <option value="[env]" default disabled >--Please Select Server Environment--</option>
+            <option value="dev">Development Environment</option>
+            <option value="tst">Testing Environment</option>
+            <option value="stg">Staging Environment</option>
+            <option value="prd">Production Environment</option>
+        </select>
+        <span>-</span>
+        <input type="number" name="server_index" id="server-index-input" min="00" max="99" value="00">
+    </form>
+    <div id="output-wrapper">
+        <span id="output"></span>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
