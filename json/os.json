@@ -36,7 +36,32 @@
         "Ventura": {}
     },
     "windows": {
-        "desktop": {},
+        "desktop": {
+            "Windows 10 Education": "win_10_edu",
+            "Windows 10 Enterprise": "win_10_ent",
+            "Windows 10 Enterprise LTSC": "win_10_ent_ltsc",
+            "Windows 10 Home": "win_10_home",
+            "Windows 10 Professional": "win_10_pro",
+            "Windows 10 Professional for Workstations": "win_10_pro_ws",
+            "Windows 11 Education": "win_10_edu",
+            "Windows 11 Enterprise": "win_10_ent",
+            "Windows 11 Home": "win_10_home",
+            "Windows 11 Professional": "win_10_pro",
+            "Windows 11 Professional Education": "win_10_ent_ltsc",
+            "Windows 11 Professional for Workstations": "win_10_pro_ws",
+            "Windows 7 Enterprise": "win_7_ent",
+            "Windows 7 Home Basic": "win_7_hb",
+            "Windows 7 Home Premium": "win_7_hp",
+            "Windows 7 Professional": "win_7_pro",
+            "Windows 7 Starter": "win_7_st",
+            "Windows 7 Ultimate": "win_7_ult",
+            "Windows 8 Core": "win_8_core",
+            "Windows 8 Enterprise": "win_8_ent",
+            "Windows 8 Professional": "win_8_pro",
+            "Windows 8.1 Core": "win_8_1_core",
+            "Windows 8.1 Enterprise": "win_8_1_ent",
+            "Windows 8.1 Professional": "win_8_1_pro"
+        },
         "server": {}
     }
 }
