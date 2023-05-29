@@ -5,23 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheBaum's Server Name Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://thebaum123.github.io/favicon.png" type="image/x-icon">
 </head>
-<body>
+<body style="background-color: #282828;">
     <form id="input-form">
-        <select name="purpose" id="purpose-selector">
-            <option value="[purpose]" default disabled>--Please Select Server Purpose--</option>
-        </select>
-        <span>-</span>
-        <select name="env" id="env-selector">
-            <option value="[env]" default disabled >--Please Select Server Environment--</option>
-            <option value="dev">Development Environment</option>
-            <option value="tst">Testing Environment</option>
-            <option value="stg">Staging Environment</option>
-            <option value="prd">Production Environment</option>
-        </select>
-        <span>-</span>
-        <input type="number" name="server_index" id="server-index-input" min="00" max="99" value="00">
+        <div id="purpose-wrapper" class="label-input-wrapper">
+            <label for="purpose-selector" class="form-label">Server purpose:</label>
+            <select name="purpose" id="purpose-selector">
+                <option value="[purpose]" default disabled>--Please Select Server Purpose--</option>
+            </select>
+        </div>
+        <hr>
+        <div id="env-wrapper" class="label-input-wrapper">
+            <label for="env-selector" class="form-label">Environment:</label>
+            <select name="env" id="env-selector">
+                <option value="[env]" default disabled >--Please Select Server Environment--</option>
+                <option value="dev">Development Environment</option>
+                <option value="tst">Testing Environment</option>
+                <option value="stg">Staging Environment</option>
+                <option value="prd">Production Environment</option>
+            </select>
+        </div>
+        <hr>
+        <div id="server-index-wrapper" class="label-input-wrapper">
+            <label for="server-index-input">Server count:</label>
+            <input type="text" name="server_index" id="server-index-input" min="00" max="99" value="00">
+        </div>
     </form>
+    <hr>
     <div id="output-wrapper">
         <span id="output"></span>
     </div>
