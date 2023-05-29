@@ -55,6 +55,8 @@ function twoDigits(number) {
         let newNum = [0, number]
         newNum = newNum.join("")
         return newNum
+    } else {
+        return number
     }
 }
 
