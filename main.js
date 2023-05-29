@@ -30,14 +30,11 @@ purposesRequest.onload = () => {
 }
 
 serverIndexInput.addEventListener("change", e => {
-    if(serverIndexInput.value.length < 2) {
-        serverIndexInput.value = twoDigits(serverIndexInput.value)
-    }
+    serverIndexInput.value = twoDigits(serverIndexInput.value)
 })
 
-inputForm.addEventListener("change", e => {
-    newName()
-})
+inputForm.addEventListener("change", () => {newName()})
+document.addEventListener("keyup", () => {newName()})
 
 inputForm.addEventListener("submit", e => {
     e.preventDefault()
@@ -45,7 +42,7 @@ inputForm.addEventListener("submit", e => {
 })
 
 function newName() {
-    if(firstNewName) {
+    if(firstNewName) {
         output.innerText = `[purpose]-[os]-[env]-[index]`
         firstNewName = false
     } else {
@@ -61,4 +58,4 @@ function twoDigits(number) {
     }
 }
 
-document.addEventListener("load", newName())
+newName()
