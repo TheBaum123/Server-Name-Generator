@@ -30,6 +30,7 @@ input {
     border-radius: 100vh;
     text-align: center;
     margin: 0.25rem;
+    transition: 250ms;
 }
 
 #input-form {
