@@ -2,56 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheBaum's Server Name Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://thebaum123.github.io/favicon.png" type="image/x-icon">
 </head>
-<body onload="init()">
-<div id="grid-container">
-    <select id="OSType">
-        <option selected disabled value=""> -- select an option -- </option>
-        <option value="Win">Windows Default</option>
-        <option value="WinServ">Windows Server</option>
-        <option value="OSX">MacOS</option>
-        <option value="Linux">Linux</option>
-        <option value="BSD">BSD</option>
-        <option value="Hypervisor">Hypervisor</option>
-    </select>
-
-    <select id="version">
-        <option selected disabled value=""> -- select an option -- </option>
-        <option value="custom">other</option>
-    </select>
-
-    <input id="customVersion" type="text">
-
-    <select id="edition">
-        <option selected disabled value=""> -- select an option -- </option>
-    </select>
-
-    <select id="PV">
-        <option selected disabled value=""> -- select an option -- </option>
-        <option value="P">Physical</option>
-        <option value="V">Virtual Machine</option>
-        <option value="C">Container</option>
-    </select>
-
-    <input type="number" id="ServerIndex">
-    <input type="checkbox" id="showEdition" checked="true">
-
-    <div id="out-container">
-        <label id="output">Select Values to start</label>
+<body style="background-color: #282828;">
+    <form id="input-form">
+        <div id="purpose-wrapper" class="label-input-wrapper">
+            <label for="purpose-selector" class="form-label">Server purpose:</label>
+            <select name="purpose" id="purpose-selector">
+                <option value="[purpose]" default disabled>--Please Select Server Purpose--</option>
+            </select>
+        </div>
+        <hr>
+        <div id="env-wrapper" class="label-input-wrapper">
+            <label for="env-selector" class="form-label">Environment:</label>
+            <select name="env" id="env-selector">
+                <option value="[env]" default disabled >--Please Select Server Environment--</option>
+                <option value="dev">Development Environment</option>
+                <option value="tst">Testing Environment</option>
+                <option value="stg">Staging Environment</option>
+                <option value="prd">Production Environment</option>
+            </select>
+        </div>
+        <hr>
+        <div id="os-family-selection-wrapper" class="label-input-wrapper">
+            <label for="os-family-selector">Select os family:</label>
+            <select name="os-family" id="os-family-selector">
+                <option value="[os]" default disabled >--Please Select OS Family--</option>
+            </select>
+        </div>
+        <div id="os-type-selection-wrapper" class="label-input-wrapper">
+            <label for="os-type-selector">Select os type:</label>
+            <select name="os-type" id="os-type-selector">
+                <option value="[os]" default disabled >--Please Select OS Type--</option>
+                <option value="[os]">--Please select an os family first--</option>
+            </select>
+        </div>
+        <div id="os-specific-selection-wrapper" class="label-input-wrapper">
+            <label for="os-specific-selector">Select os version:</label>
+            <select name="os-type" id="os-specific-selector">
+                <option value="[os]" default disabled >--Please Select OS Version--</option>
+                <option value="[os]">--Please select an os type first--</option>
+            </select>
+        </div>
+        <hr>
+        <div id="server-index-wrapper" class="label-input-wrapper">
+            <label for="server-index-input">Server count:</label>
+            <input type="text" name="server_index" id="server-index-input" min="00" max="99" value="00">
+        </div>
+    </form>
+    <hr>
+    <div id="output-wrapper">
+        <span id="output"></span>
     </div>
-
-    <label id="typeLabel">Which type of OS are you using</label>
-    <label id="versionLabel">Which version of it?</label>
-    <label id="editionLabel">Which Edition?</label>
-    <label id="pvLabel">VM, Bare Metal or Container?</label>
-    <label id="showEditionLabel">Show the edition in the output?</label>
-    <label id="indexLabel">Count of Machines like this?</label>
-
-    <button id="reset-button" onclick="window.location.reload()">Reset</button>    
-</div>
-
-    <script src="default.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

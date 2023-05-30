@@ -1,0 +1,14 @@
+{
+    "app": "Application Server (non-web)",
+    "sql": "Database Server",
+    "ftp": "FTP or SFTP Server",
+    "mta": "Mail Server",
+    "dns": "DNS/Name Server",
+    "cfg": "Configuration Management (puppet/ansible/etc.)",
+    "mon": "Monitoring Server (nagios, sensu, etc.)",
+    "prx": "Proxy/Load Balancer (software)",
+    "ssh": "SSH Jump/Bastion Host",
+    "sto": "Storage Server",
+    "vcs": "Version Control Software Server (Git/SVN/CVS/etc.)",
+    "vmm": "Virtual Machine Manager"
+}

@@ -1,0 +1,75 @@
+{
+    "bsd": {
+        "freebsd": {},
+        "openbsd": {}
+    },
+    "hypervisors": {
+        "proxmox": {
+            "proxmox 1 enterprise": "prox_ent_1",
+            "proxmox 1 free": "prox_free_1",
+            "proxmox 2 enterprise": "prox_ent_2",
+            "proxmox 2 free": "prox_free_2",
+            "proxmox 3 enterprise": "prox_ent_3",
+            "proxmox 3 free": "prox_free_3",
+            "proxmox 4 enterprise": "prox_ent_4",
+            "proxmox 4 free": "prox_free_4",
+            "proxmox 5 enterprise": "prox_ent_5",
+            "proxmox 5 free": "prox_free_5",
+            "proxmox 6 enterprise": "prox_ent_6",
+            "proxmox 6 free": "prox_free_6",
+            "proxmox 7 enterprise": "prox_ent_7",
+            "proxmox 7 free": "prox_free_7"
+        }
+    },
+    "linux": {
+        "arch": {},
+        "debian": {
+            "Debian 11, Bullseye": "deb_11"
+        },
+        "red hat enterprise linux": {},
+        "ubuntu": {}
+    },
+    "osx": {
+        "10.x": {},
+        "Big Sur": {
+            "macOS Big Sur 11.1.x": "osx_11_1",
+            "macOS Big Sur 11.2.x": "osx_11_2",
+            "macOS Big Sur 11.3.x": "osx_11_3",
+            "macOS Big Sur 11.4.x": "osx_11_4",
+            "macOS Big Sur 11.5.x": "osx_11_5",
+            "macOS Big Sur 11.6.x": "osx_11_6",
+            "macOS Big Sur 11.7.x": "osx_11_7"
+        },
+        "Monterey": {},
+        "Ventura": {}
+    },
+    "windows": {
+        "desktop": {
+            "Windows 10 Education": "win_10_edu",
+            "Windows 10 Enterprise": "win_10_ent",
+            "Windows 10 Enterprise LTSC": "win_10_ent_ltsc",
+            "Windows 10 Home": "win_10_home",
+            "Windows 10 Professional": "win_10_pro",
+            "Windows 10 Professional for Workstations": "win_10_pro_ws",
+            "Windows 11 Education": "win_10_edu",
+            "Windows 11 Enterprise": "win_10_ent",
+            "Windows 11 Home": "win_10_home",
+            "Windows 11 Professional": "win_10_pro",
+            "Windows 11 Professional Education": "win_10_ent_ltsc",
+            "Windows 11 Professional for Workstations": "win_10_pro_ws",
+            "Windows 7 Enterprise": "win_7_ent",
+            "Windows 7 Home Basic": "win_7_hb",
+            "Windows 7 Home Premium": "win_7_hp",
+            "Windows 7 Professional": "win_7_pro",
+            "Windows 7 Starter": "win_7_st",
+            "Windows 7 Ultimate": "win_7_ult",
+            "Windows 8 Core": "win_8_core",
+            "Windows 8 Enterprise": "win_8_ent",
+            "Windows 8 Professional": "win_8_pro",
+            "Windows 8.1 Core": "win_8_1_core",
+            "Windows 8.1 Enterprise": "win_8_1_ent",
+            "Windows 8.1 Professional": "win_8_1_pro"
+        },
+        "server": {}
+    }
+}

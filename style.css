@@ -1,54 +1,75 @@
 :root {
-    --main-bg-color: #2B3D41;
-    --secondary-bg-color: #4C5F6B;
-    --text-color: #E0E2DB;
-    --highlight-color: #A37774;
-    --lighter-secondary-bg-color: #5B6F7A;
+    --bg_h: #1d2021;
+    --bg:   #282828;
+    --bg_s: #32302f;
+    --text_color:  #fbf1c7;
+    --red:    #fb4934;
+    --green:  #b8bb26;
+    --yellow: #fabd2f;
+    --blue:   #83a598;
+    --purple: #d3869b;
+    --aqua:   #8ec07c;
+    --gray:   #928374;
+    --orange: #fe8019;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5rem;
+    overflow: hidden;
 }
 
-#grid-container {
-    display: grid;
-    background-color: var(--main-bg-color);
-    grid-template-areas: 
-    'type-label type-label version-label version-label show-edition-label edition-label index-label pv-label'
-    'type type version version show-edition edition index pv'
-    'footer1 footer1 footer1 out reset footer2 footer2 footer2';
-    gap: 15px;
-    border: var(--secondary-bg-color) 0.5vh solid;
-    border-radius: 15px;
-    margin: 0.5vh;
+body {
+    color: var(--text_color);
 }
 
-#grid-container>* {
-    background-color: var(--secondary-bg-color);
-    border-radius: 10px;
-    margin-top: 0.5vh;
-    margin-bottom: 0.5vh;
-    color: var(--text-color);
-}
-
-select {
-    border: 0;
-}
-
-#OSType { grid-area: type;}
-#version { grid-area: version;}
-#customVersion { grid-area: version;}
-#edition { grid-area: edition;}
-#PV { grid-area: pv;}
-#ServerIndex { grid-area: index;}
-#showEdition { grid-area: show-edition;}
-#out-container {
-    grid-area: out;
+select,
+input {
+    background-color: var(--bg_h);
+    color: var(--text_color);
+    border: var(--green) solid 5px;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 100vh;
     text-align: center;
-    padding-left: 1vw;
-    padding-right: 1vw;
+    margin: 0.25rem;
+    transition: 250ms;
+    padding: 1%;
 }
-#typeLabel { grid-area: type-label;}
-#versionLabel { grid-area: version-label;}
-#editionLabel { grid-area: edition-label;}
-#pvLabel { grid-area: pv-label;}
-#indexLabel { grid-area: index-label;}
-#editionLabel { grid-area: edition-label;}
-#showEditionLabel { grid-area: show-edition-label;}
-#reset-button { grid-area: reset;}
+
+#input-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: stretch;
+}
+
+.label-input-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+hr {
+    width: 100%;
+    color: var(--text_color);
+}
+
+select:focus-within,
+input:focus {
+    border-color: var(--red);
+}
+
+#output-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#output {
+    margin: 1%;
+    padding: 1%;
+    border: var(--blue) 5px solid;
+    border-radius: 100vh;
+}
