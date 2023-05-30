@@ -1,9 +1,12 @@
 const inputForm = document.getElementById("input-form")
 const purposeSelector = document.getElementById("purpose-selector")
-
+const osFamilySelector = document.getElementById("os-family-selector")
+const osTypeSelector = document.getElementById("os-type-selector")
+const osSpecificSelector = document.getElementById("os-specific-selector")
 const envSelector = document.getElementById("env-selector")
 const serverIndexInput = document.getElementById("server-index-input")
 
+let osList
 
 const output = document.getElementById("output")
 
@@ -25,6 +28,42 @@ purposesRequest.onload = () => {
         }
     }
 }
+
+let osListRequest = new XMLHttpRequest()
+osListRequest.open("GET", "/json/os.json")
+osListRequest.send()
+osListRequest.responseType = "json"
+osListRequest.onload = () => {
+    if(osListRequest.status = 200) {
+        osList = osListRequest.response
+        Object.keys(osList).forEach(elem => {
+            let newOption = new Option(elem, elem)
+            osFamilySelector.add(newOption)
+        })
+    } else {
+        osList = {
+            "error": {
+                "error": {
+                    "error": "error"
+                }
+            }
+        }
+    }
+}
+
+osFamilySelector.addEventListener("change", e => {
+    console.log(Object.keys(osList[osFamilySelector.value]))
+    while(osTypeSelector.children.length > 1) {
+        osTypeSelector.removeChild(osTypeSelector.lastChild)
+    }
+    if(osFamilySelector.value) {
+        Object.keys(osList[osFamilySelector.value]).forEach(key => {
+            osTypeSelector.add(new Option(key, key))
+        })
+    } else {
+        osTypeSelector.add(new Option("Please select an os family", "[os]"))
+    }
+})
 
 serverIndexInput.addEventListener("change", e => {
     serverIndexInput.value = twoDigits(serverIndexInput.value)
