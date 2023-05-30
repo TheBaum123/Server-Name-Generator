@@ -16,11 +16,8 @@ purposesRequest.responseType = "json"
 purposesRequest.onload = () => {
     if(purposesRequest.status = 200) {
         for(const [abbr, uiText] of Object.entries(purposesRequest.response)) {
-            let newOption = document.createElement("option")
-            newOption.value = abbr
-            newOption.id = `${abbr}-option`
-            purposeSelector.appendChild(newOption)
-            document.getElementById(`${abbr}-option`).innerText = uiText
+            let newOption = new Option(uiText, abbr)
+            purposeSelector.add(newOption)
         }
     } else {
         purposesAvailable = {
