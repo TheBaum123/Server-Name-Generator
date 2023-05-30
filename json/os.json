@@ -31,7 +31,15 @@
     },
     "osx": {
         "10.x": {},
-        "Big Sur": {},
+        "Big Sur": {
+            "macOS Big Sur 11.1.x": "osx_11_1",
+            "macOS Big Sur 11.2.x": "osx_11_2",
+            "macOS Big Sur 11.3.x": "osx_11_3",
+            "macOS Big Sur 11.4.x": "osx_11_4",
+            "macOS Big Sur 11.5.x": "osx_11_5",
+            "macOS Big Sur 11.6.x": "osx_11_6",
+            "macOS Big Sur 11.7.x": "osx_11_7"
+        },
         "Monterey": {},
         "Ventura": {}
     },
