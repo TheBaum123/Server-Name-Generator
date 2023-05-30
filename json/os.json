@@ -30,46 +30,56 @@
         "ubuntu": {}
     },
     "osx": {
-        "10.x": {},
-        "Big Sur": {
-            "macOS Big Sur 11.1.x": "osx_11_1",
-            "macOS Big Sur 11.2.x": "osx_11_2",
-            "macOS Big Sur 11.3.x": "osx_11_3",
-            "macOS Big Sur 11.4.x": "osx_11_4",
-            "macOS Big Sur 11.5.x": "osx_11_5",
-            "macOS Big Sur 11.6.x": "osx_11_6",
-            "macOS Big Sur 11.7.x": "osx_11_7"
+        "> 10.x": {
+            "MacOS 12 - Ventura": "osx_13",
+            "MacOS 12 - Monterey": "osx_12",
+            "MacOS 11 - Big Sur": "osx_11"
         },
-        "Monterey": {},
-        "Ventura": {}
+        "10.x": {
+            "MacOS 10.15 - Catalina": "osx_10_15",
+            "MacOS 10.14 - Mojave": "osx_10_14",
+            "MacOS 10.13 - High Sierra": "osx_10_13",
+            "MacOS 10.12 - Sierra": "osx_10_12",
+            "MacOS 10.11 - El Capitan": "osx_10_11",
+            "MacOS 10.10 - Yosemite": "osx_10_10",
+            "MacOS 10.9 - Mavericks": "osx_10_9",
+            "MacOS 10.8 - Mountain Lion": "osx_10_8",
+            "MacOS 10.7 - Lion": "osx_10_7",
+            "MacOS 10.6 - Snow Leopard": "osx_10_6",
+            "MacOS 10.5 - Leopard": "osx_10_5",
+            "MacOS 10.4 - Tiger": "osx_10_4",
+            "MacOS 10.3 - Panther": "osx_10_3",
+            "MacOS 10.2 - Jaguar": "osx_10_2",
+            "MacOS 10.1 - Puma": "osx_10_1",
+            "MacOS 10.0 - Cheetah": "osx_10_0",
+            "MacOS public Beta - Kodiak": "osx_pub_beta"
+        }
     },
     "windows": {
         "desktop": {
-            "Windows 10 Education": "win_10_edu",
-            "Windows 10 Enterprise": "win_10_ent",
-            "Windows 10 Enterprise LTSC": "win_10_ent_ltsc",
-            "Windows 10 Home": "win_10_home",
-            "Windows 10 Professional": "win_10_pro",
-            "Windows 10 Professional for Workstations": "win_10_pro_ws",
-            "Windows 11 Education": "win_10_edu",
-            "Windows 11 Enterprise": "win_10_ent",
-            "Windows 11 Home": "win_10_home",
-            "Windows 11 Professional": "win_10_pro",
-            "Windows 11 Professional Education": "win_10_ent_ltsc",
-            "Windows 11 Professional for Workstations": "win_10_pro_ws",
-            "Windows 7 Enterprise": "win_7_ent",
-            "Windows 7 Home Basic": "win_7_hb",
-            "Windows 7 Home Premium": "win_7_hp",
-            "Windows 7 Professional": "win_7_pro",
-            "Windows 7 Starter": "win_7_st",
-            "Windows 7 Ultimate": "win_7_ult",
-            "Windows 8 Core": "win_8_core",
-            "Windows 8 Enterprise": "win_8_ent",
-            "Windows 8 Professional": "win_8_pro",
-            "Windows 8.1 Core": "win_8_1_core",
-            "Windows 8.1 Enterprise": "win_8_1_ent",
-            "Windows 8.1 Professional": "win_8_1_pro"
+            "Windows 11": "win_11",
+            "Windows 10": "win_10",
+            "Windows 8.1": "win_8_1",
+            "Windows 8": "win_8",
+            "Windows 7": "win_7",
+            "Windows vista": "win_vis",
+            "Windows XP": "win_xp",
+            "Windows 2000 Professional": "win_2000",
+            "Windows me / Windows Millenium Edition": "win_me",
+            "Windows 98": "win_98",
+            "Windows 95": "win_95",
+            "Windows NT 4.0": "win_nt"
         },
-        "server": {}
+        "server": {
+            "Windows Server 2022": "win_srv_22",
+            "Windows Server 2019": "win_srv_19",
+            "Windows Server 2016": "win_srv_16",
+            "Windows Server 2012 R2": "win_srv_12r2",
+            "Windows Server 2012": "win_srv_12",
+            "Windows Server 2008 R2": "win_srv_08r2",
+            "Windows Server 2008": "win_srv_08",
+            "Windows Server 2003 R2": "win_srv_03r2",
+            "Windows Server 2003": "win_srv_03"
+        }
     }
 }
