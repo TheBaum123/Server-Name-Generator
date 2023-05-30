@@ -52,7 +52,6 @@ osListRequest.onload = () => {
 }
 
 osFamilySelector.addEventListener("change", e => {
-    console.log(Object.keys(osList[osFamilySelector.value]))
     while(osTypeSelector.children.length > 1) {
         osTypeSelector.removeChild(osTypeSelector.lastChild)
     }
@@ -63,7 +62,25 @@ osFamilySelector.addEventListener("change", e => {
     } else {
         osTypeSelector.add(new Option("Please select an os family", "[os]"))
     }
+    updateOsVersion()
 })
+
+osTypeSelector.addEventListener("change", e => {
+    updateOsVersion()
+})
+
+function updateOsVersion() {
+    while(osSpecificSelector.children.length > 1) {
+        osSpecificSelector.removeChild(osSpecificSelector.lastChild)
+    }
+    console.log(osList[osFamilySelector.value][osTypeSelector.value])
+    if(osTypeSelector.value) {
+        for(const [uiText, value] of Object.entries(osList[osFamilySelector.value][osTypeSelector.value])) {
+            let newOption = new Option(uiText, value)
+            osSpecificSelector.add(newOption)
+        }
+    }
+}
 
 serverIndexInput.addEventListener("change", e => {
     serverIndexInput.value = twoDigits(serverIndexInput.value)
@@ -79,10 +96,10 @@ inputForm.addEventListener("submit", e => {
 
 function newName() {
     if(firstNewName) {
-        output.innerText = `[purpose]-[os]-[env]-[index]`
+        output.innerText = `[purpose]-[env]-[index]-[os]`
         firstNewName = false
     } else {
-        output.innerText = `${purposeSelector.value}-[os]-${envSelector.value}-${serverIndexInput.value}`
+        output.innerText = `${purposeSelector.value}-${envSelector.value}-${serverIndexInput.value}-${osSpecificSelector.value}`
     }
 }
 
