@@ -1,7 +1,9 @@
 {
     "bsd": {
-        "freebsd": {},
-        "openbsd": {}
+        "FreeBSD": {},
+        "OpenBSD": {},
+        "NetBSD": {},
+        "DragonFlyBSD": {}
     },
     "hypervisors": {
         "proxmox": {
