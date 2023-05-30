@@ -13,7 +13,7 @@ const output = document.getElementById("output")
 let firstNewName = true
 
 let purposesRequest = new XMLHttpRequest()
-purposesRequest.open("GET", "/json/purpose.json")
+purposesRequest.open("GET", `${window.location}/json/purpose.json`)
 purposesRequest.send()
 purposesRequest.responseType = "json"
 purposesRequest.onload = () => {
@@ -30,7 +30,7 @@ purposesRequest.onload = () => {
 }
 
 let osListRequest = new XMLHttpRequest()
-osListRequest.open("GET", "/json/os.json")
+osListRequest.open("GET", `${window.location}/json/os.json`)
 osListRequest.send()
 osListRequest.responseType = "json"
 osListRequest.onload = () => {
