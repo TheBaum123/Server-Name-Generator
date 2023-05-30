@@ -31,6 +31,27 @@
             </select>
         </div>
         <hr>
+        <div id="os-family-selection-wrapper" class="label-input-wrapper">
+            <label for="os-family-selector">Select os family:</label>
+            <select name="os-family" id="os-family-selector">
+                <option value="[os]" default disabled >--Please Select OS Family--</option>
+            </select>
+        </div>
+        <div id="os-type-selection-wrapper" class="label-input-wrapper">
+            <label for="os-type-selector">Select os type:</label>
+            <select name="os-type" id="os-type-selector">
+                <option value="[os]" default disabled >--Please Select OS Type--</option>
+                <option value="[os]">--Please select an os family first--</option>
+            </select>
+        </div>
+        <div id="os-specific-selection-wrapper" class="label-input-wrapper">
+            <label for="os-specific-selector">Select os version:</label>
+            <select name="os-type" id="os-specific-selector">
+                <option value="[os]" default disabled >--Please Select OS Version--</option>
+                <option value="[os]">--Please select an os type first--</option>
+            </select>
+        </div>
+        <hr>
         <div id="server-index-wrapper" class="label-input-wrapper">
             <label for="server-index-input">Server count:</label>
             <input type="text" name="server_index" id="server-index-input" min="00" max="99" value="00">
