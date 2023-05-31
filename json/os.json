@@ -21,6 +21,9 @@
             "proxmox 6 free": "prox_free_6",
             "proxmox 7 enterprise": "prox_ent_7",
             "proxmox 7 free": "prox_free_7"
+        },
+        "KVM": {
+            "KVM": "kvm"
         }
     },
     "linux": {
