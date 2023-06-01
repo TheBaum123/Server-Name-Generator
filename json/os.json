@@ -1,11 +1,15 @@
 {
     "bsd": {
+        "DragonFlyBSD": {},
         "FreeBSD": {},
-        "OpenBSD": {},
         "NetBSD": {},
-        "DragonFlyBSD": {}
+        "OpenBSD": {}
     },
     "hypervisors": {
+        "HyperV": {},
+        "KVM": {
+            "KVM": "kvm"
+        },
         "proxmox": {
             "proxmox 1 enterprise": "prox_ent_1",
             "proxmox 1 free": "prox_free_1",
@@ -21,9 +25,6 @@
             "proxmox 6 free": "prox_free_6",
             "proxmox 7 enterprise": "prox_ent_7",
             "proxmox 7 free": "prox_free_7"
-        },
-        "KVM": {
-            "KVM": "kvm"
         }
     },
     "linux": {
@@ -35,56 +36,56 @@
         "ubuntu": {}
     },
     "osx": {
-        "> 10.x": {
-            "MacOS 12 - Ventura": "osx_13",
-            "MacOS 12 - Monterey": "osx_12",
-            "MacOS 11 - Big Sur": "osx_11"
-        },
         "10.x": {
-            "MacOS 10.15 - Catalina": "osx_10_15",
-            "MacOS 10.14 - Mojave": "osx_10_14",
-            "MacOS 10.13 - High Sierra": "osx_10_13",
-            "MacOS 10.12 - Sierra": "osx_10_12",
-            "MacOS 10.11 - El Capitan": "osx_10_11",
-            "MacOS 10.10 - Yosemite": "osx_10_10",
-            "MacOS 10.9 - Mavericks": "osx_10_9",
-            "MacOS 10.8 - Mountain Lion": "osx_10_8",
-            "MacOS 10.7 - Lion": "osx_10_7",
-            "MacOS 10.6 - Snow Leopard": "osx_10_6",
-            "MacOS 10.5 - Leopard": "osx_10_5",
-            "MacOS 10.4 - Tiger": "osx_10_4",
-            "MacOS 10.3 - Panther": "osx_10_3",
-            "MacOS 10.2 - Jaguar": "osx_10_2",
-            "MacOS 10.1 - Puma": "osx_10_1",
             "MacOS 10.0 - Cheetah": "osx_10_0",
+            "MacOS 10.1 - Puma": "osx_10_1",
+            "MacOS 10.10 - Yosemite": "osx_10_10",
+            "MacOS 10.11 - El Capitan": "osx_10_11",
+            "MacOS 10.12 - Sierra": "osx_10_12",
+            "MacOS 10.13 - High Sierra": "osx_10_13",
+            "MacOS 10.14 - Mojave": "osx_10_14",
+            "MacOS 10.15 - Catalina": "osx_10_15",
+            "MacOS 10.2 - Jaguar": "osx_10_2",
+            "MacOS 10.3 - Panther": "osx_10_3",
+            "MacOS 10.4 - Tiger": "osx_10_4",
+            "MacOS 10.5 - Leopard": "osx_10_5",
+            "MacOS 10.6 - Snow Leopard": "osx_10_6",
+            "MacOS 10.7 - Lion": "osx_10_7",
+            "MacOS 10.8 - Mountain Lion": "osx_10_8",
+            "MacOS 10.9 - Mavericks": "osx_10_9",
             "MacOS public Beta - Kodiak": "osx_pub_beta"
+        },
+        "> 10.x": {
+            "MacOS 11 - Big Sur": "osx_11",
+            "MacOS 12 - Monterey": "osx_12",
+            "MacOS 12 - Ventura": "osx_13"
         }
     },
     "windows": {
         "desktop": {
-            "Windows 11": "win_11",
             "Windows 10": "win_10",
-            "Windows 8.1": "win_8_1",
-            "Windows 8": "win_8",
-            "Windows 7": "win_7",
-            "Windows vista": "win_vis",
-            "Windows XP": "win_xp",
+            "Windows 11": "win_11",
             "Windows 2000 Professional": "win_2000",
-            "Windows me / Windows Millenium Edition": "win_me",
-            "Windows 98": "win_98",
+            "Windows 7": "win_7",
+            "Windows 8": "win_8",
+            "Windows 8.1": "win_8_1",
             "Windows 95": "win_95",
-            "Windows NT 4.0": "win_nt"
+            "Windows 98": "win_98",
+            "Windows NT 4.0": "win_nt",
+            "Windows XP": "win_xp",
+            "Windows me / Windows Millenium Edition": "win_me",
+            "Windows vista": "win_vis"
         },
         "server": {
-            "Windows Server 2022": "win_srv_22",
-            "Windows Server 2019": "win_srv_19",
-            "Windows Server 2016": "win_srv_16",
-            "Windows Server 2012 R2": "win_srv_12r2",
-            "Windows Server 2012": "win_srv_12",
-            "Windows Server 2008 R2": "win_srv_08r2",
-            "Windows Server 2008": "win_srv_08",
+            "Windows Server 2003": "win_srv_03",
             "Windows Server 2003 R2": "win_srv_03r2",
-            "Windows Server 2003": "win_srv_03"
+            "Windows Server 2008": "win_srv_08",
+            "Windows Server 2008 R2": "win_srv_08r2",
+            "Windows Server 2012": "win_srv_12",
+            "Windows Server 2012 R2": "win_srv_12r2",
+            "Windows Server 2016": "win_srv_16",
+            "Windows Server 2019": "win_srv_19",
+            "Windows Server 2022": "win_srv_22"
         }
     }
 }
