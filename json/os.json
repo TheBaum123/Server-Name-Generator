@@ -1,9 +1,49 @@
 {
     "bsd": {
-        "DragonFlyBSD": {},
-        "FreeBSD": {},
-        "NetBSD": {},
-        "OpenBSD": {}
+        "DragonFlyBSD": {
+            "DragonFlyBSD 1.x": "dfbsd_1",
+            "DragonFlyBSD 2.x": "dfbsd_2",
+            "DragonFlyBSD 3.x": "dfbsd_3",
+            "DragonFlyBSD 4.x": "dfbsd_4",
+            "DragonFlyBSD 5.x": "dfbsd_5",
+            "DragonFlyBSD 6.x": "dfbsd_6"
+        },
+        "FreeBSD": {
+            "FreeBSD 1.x": "fbsd_1",
+            "FreeBSD 2.x": "fbsd_2",
+            "FreeBSD 3.x": "fbsd_3",
+            "FreeBSD 4.x": "fbsd_4",
+            "FreeBSD 5.x": "fbsd_5",
+            "FreeBSD 6.x": "fbsd_6",
+            "FreeBSD 7.x": "fbsd_7",
+            "FreeBSD 8.x": "fbsd_8",
+            "FreeBSD 9.x": "fbsd_9",
+            "FreeBSD 10.x": "fbsd_10",
+            "FreeBSD 11.x": "fbsd_11",
+            "FreeBSD 12.x": "fbsd_12",
+            "FreeBSD 13.x": "fbsd_13"
+        },
+        "NetBSD": {
+            "NetBSD 0.x": "nbsd_0",
+            "NetBSD 1.x": "nbsd_1",
+            "NetBSD 2.x": "nbsd_2",
+            "NetBSD 3.x": "nbsd_3",
+            "NetBSD 4.x": "nbsd_4",
+            "NetBSD 5.x": "nbsd_5",
+            "NetBSD 6.x": "nbsd_6",
+            "NetBSD 7.x": "nbsd_7",
+            "NetBSD 8.x": "nbsd_8",
+            "NetBSD 9.x": "nbsd_9"
+        },
+        "OpenBSD": {
+            "OpenBSD 1.x": "obsd_1",
+            "OpenBSD 2.x": "obsd_2",
+            "OpenBSD 3.x": "obsd_3",
+            "OpenBSD 4.x": "obsd_4",
+            "OpenBSD 5.x": "obsd_5",
+            "OpenBSD 6.x": "obsd_6",
+            "OpenBSD 7.x": "obsd_7"
+        }
     },
     "hypervisors": {
         "HyperV": {},
