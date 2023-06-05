@@ -46,9 +46,32 @@
         }
     },
     "hypervisors": {
-        "HyperV": {},
-        "KVM": {
-            "KVM": "kvm"
+        "HyperV": {
+            "HyperV 2008": "hyv_08",
+            "HyperV 2012": "hyv_12",
+            "HyperV 2016": "hyv_16"
+        },
+        "Citrix Xen Server": {
+            "Xen Server 1.0": "xen_1",
+            "Xen Server 2.0": "xen_2",
+            "Xen Server 3.0": "xen_3",
+            "Xen Server 4.x": "xen_4",
+            "Xen Server 5.x": "xen_5",
+            "Xen Server 6.x": "xen_6",
+            "Xen Server 7.x": "xen_7",
+            "Xen Server 8.x": "xen_8"
+        },
+        "Nutanix": {
+            "Nutanix 5": "aos_5",
+            "Nutanix 6": "aos_6"
+        },
+        "VMWare ESXI": {
+            "ESXI 3.x": "esxi_3",
+            "ESXI 4.x": "esxi_4",
+            "ESXI 5.x": "esxi_5",
+            "ESXI 6.x": "esxi_6",
+            "ESXI 7.x": "esxi_7",
+            "ESXI 8.x": "esxi_8"
         },
         "proxmox": {
             "proxmox 1 enterprise": "prox_ent_1",
