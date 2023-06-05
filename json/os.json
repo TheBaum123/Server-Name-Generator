@@ -91,7 +91,9 @@
         }
     },
     "linux": {
-        "arch": {},
+        "arch": {
+            "arch": "arch"
+        },
         "debian": {
             "Debian 11, Bullseye": "deb_11",
             "Debian 10, Buster": "deb_10",
@@ -104,8 +106,32 @@
             "Debian 3.1, Sarge / Debian 3.0, Woody": "deb_3",
             "Debian 2.2, Potato / Debian 2.1, Slink / Debian 2.0, Hamm": "deb_2"
         },
-        "red hat enterprise linux": {},
-        "ubuntu": {}
+        "red hat enterprise linux": {
+            "red hat enterprise linux 2.1": "rhel_2",
+            "red hat enterprise linux 3.x": "rhel_3",
+            "red hat enterprise linux 4.x": "rhel_4",
+            "red hat enterprise linux 5.x": "rhel_5",
+            "red hat enterprise linux 6.x": "rhel_6",
+            "red hat enterprise linux 7.x": "rhel_7",
+            "red hat enterprise linux 8.x": "rhel_8",
+            "red hat enterprise linux 9.x": "rhel_9"
+        },
+        "ubuntu": {
+            "Ubuntu 4.10, Warty Warthog": "ubu_4",
+            "Ubuntu 5.10, Breezy Badger": "ubu_5",
+            "Ubuntu 6.06 LTS, Dapper Drake": "ubu_6",
+            "Ubuntu 8.04 LTS, Hardy Heron": "ubu_8",
+            "Ubuntu 10.04 LTS, Lucid Lynx": "ubu_10",
+            "Ubuntu 12.04 LTS, Precise Pangolin": "ubu_12",
+            "Ubuntu 14.04 LTS, Trusty Tahr": "ubu_14",
+            "Ubuntu 16.04 LTS, Xenial Xerus": "ubu_16",
+            "Ubuntu 18.04 LTS, Bionic Beaver": "ubu_18",
+            "Ubuntu 19.x": "ubu_19",
+            "Ubuntu 20.04 LTS, Focal Fossa": "ubu_20",
+            "Ubuntu 21.x": "ubu_21",
+            "Ubuntu 22.04 LTS, Jammy Jellyfish": "ubu_22",
+            "Ubuntu 23.x": "ubu_23"
+        }
     },
     "osx": {
         "10.x": {
