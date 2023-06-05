@@ -52,6 +52,10 @@ osListRequest.onload = () => {
 }
 
 osFamilySelector.addEventListener("change", e => {
+    updateOSType()
+})
+
+function updateOSType() {
     while(osTypeSelector.children.length > 1) {
         osTypeSelector.removeChild(osTypeSelector.lastChild)
     }
@@ -63,7 +67,7 @@ osFamilySelector.addEventListener("change", e => {
         osTypeSelector.add(new Option("Please select an os family", "[os]"))
     }
     updateOsVersion()
-})
+}
 
 osTypeSelector.addEventListener("change", e => {
     updateOsVersion()
@@ -73,7 +77,6 @@ function updateOsVersion() {
     while(osSpecificSelector.children.length > 1) {
         osSpecificSelector.removeChild(osSpecificSelector.lastChild)
     }
-    console.log(osList[osFamilySelector.value][osTypeSelector.value])
     if(osTypeSelector.value) {
         for(const [uiText, value] of Object.entries(osList[osFamilySelector.value][osTypeSelector.value])) {
             let newOption = new Option(uiText, value)
@@ -114,3 +117,4 @@ function twoDigits(number) {
 }
 
 newName()
+setTimeout(updateOSType, 100)
