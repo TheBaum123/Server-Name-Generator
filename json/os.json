@@ -96,7 +96,8 @@
             "generic arch": "arch"
         },
         "fedora": {
-            "generic fedora": "fed"
+            "generic Fedora": "fed",
+            "Fedora 39": "fed_39"
         },
         "debian": {
             "generic Debian": "deb",
