@@ -98,7 +98,8 @@
         "fedora": {
             "generic Fedora": "fed",
             "Fedora 39": "fed_39",
-            "Fedora 38": "fed_38"
+            "Fedora 38": "fed_38",
+            "Fedora 37": "fed_37"
         },
         "debian": {
             "generic Debian": "deb",
