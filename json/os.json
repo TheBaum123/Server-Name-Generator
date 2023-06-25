@@ -103,7 +103,8 @@
             "Fedora 36": "fed_36",
             "Fedora 35": "fed_35",
             "Fedora 34": "fed_34",
-            "Fedora 33": "fed_33"
+            "Fedora 33": "fed_33",
+            "Fedora 32": "fed_32"
         },
         "debian": {
             "generic Debian": "deb",
