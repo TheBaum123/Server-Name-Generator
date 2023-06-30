@@ -107,7 +107,8 @@
             "Fedora 32": "fed_32",
             "Fedora 31": "fed_31",
             "Fedora 30": "fed_30",
-            "Fedora 29": "fed_29"
+            "Fedora 29": "fed_29",
+            "Fedora 28": "fed_28"
         },
         "debian": {
             "generic Debian": "deb",
