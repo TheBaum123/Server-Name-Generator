@@ -115,7 +115,8 @@
             "Fedora 24": "fed_24",
             "Fedora 23": "fed_23",
             "Fedora 22": "fed_22",
-            "Fedora 21, Twenty One": "fed_21"
+            "Fedora 21, Twenty One": "fed_21",
+            "Fedora 20, Heisenbug": "fed_20"
         },
         "debian": {
             "generic Debian": "deb",
